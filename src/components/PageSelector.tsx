@@ -7,6 +7,7 @@ interface CollectedData {
 
 const PageSelector: React.FC = () => {
   const [selectedPages, setSelectedPages] = useState<string[]>([]);
+  const [clicked, setClicked] = useState(false);
 
   const isAllSelected: boolean = selectedPages.length === pages.length;
 
@@ -37,9 +38,9 @@ const PageSelector: React.FC = () => {
     <div className="container min-h-screen flex items-center justify-center ">
       <div className=" w-[50vw] rounded-xl shadow-[0_-8px_30px_rgba(0,0,0,0.12),0_8px_30px_rgba(0,0,0,0.12)] p-6 relative ">
         {/* All Pages */}
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center ">
           <span className="text-gray-800 font-medium">All pages</span>
-          <label className="flex items-center cursor-pointer">
+          <label className="flex items-center cursor-pointer group">
             {/* 1. Hide the default checkbox */}
             <input
               type="checkbox"
@@ -48,7 +49,7 @@ const PageSelector: React.FC = () => {
               className="peer sr-only"
             />
 
-            <div className=" w-5 h-5 flex items-center justify-center border-2 border-gray-300 rounded  bg-white transition-all peer-checked:bg-blue-600 peer-checked:border-blue-600 ">
+            <div className=" w-5 h-5 flex items-center justify-center border-2 border-gray-300 rounded  bg-white transition-all peer-checked:bg-blue-600 peer-checked:border-blue-600  hover:bg-transparent hover:border-gray-300">
               <svg
                 className={`w-3 h-3 text-white fill-current ${
                   isAllSelected ? "block" : "hidden"
@@ -79,7 +80,7 @@ const PageSelector: React.FC = () => {
                 />
 
                 {/* 2. Create the custom box */}
-                <div className=" w-5 h-5 flex items-center justify-center border-2 border-gray-300 rounded  bg-white transition-all peer-checked:bg-blue-600 peer-checked:border-blue-600">
+                <div className=" w-5 h-5 flex items-center justify-center border-2 border-gray-300 rounded  bg-white transition-all peer-checked:bg-blue-600 peer-checked:border-blue-600 hover:bg-transparent hover:border-gray-300 ">
                   {/* 3. The Tick (SVG) - Control size here */}
                   <svg
                     className={`w-3 h-3 text-white fill-current  block`}
