@@ -19,7 +19,6 @@ const PageSelector: React.FC = () => {
   const togglePage = (page: string): void => {
     setSelectedPages((prev) =>
       prev.includes(page) ? prev.filter((p) => p !== page) : [...prev, page]
- 
     );
   };
 
@@ -80,15 +79,7 @@ const PageSelector: React.FC = () => {
                 />
 
                 {/* 2. Create the custom box */}
-                <div
-                  className="
-    w-5 h-5 
-    flex items-center justify-center 
-    border-2 border-gray-300 rounded 
-    bg-white transition-all
-    peer-checked:bg-blue-600 peer-checked:border-blue-600
-  "
-                >
+                <div className=" w-5 h-5 flex items-center justify-center border-2 border-gray-300 rounded  bg-white transition-all peer-checked:bg-blue-600 peer-checked:border-blue-600">
                   {/* 3. The Tick (SVG) - Control size here */}
                   <svg
                     className={`w-3 h-3 text-white fill-current  block`}
@@ -98,11 +89,6 @@ const PageSelector: React.FC = () => {
                   </svg>
                 </div>
               </label>
-
-              {/* <input
-                type="checkbox"
-                className="w-5 h-5 accent-blue-600 cursor-pointer"
-              /> */}
             </div>
           ))}
         </div>
