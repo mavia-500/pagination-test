@@ -7,7 +7,7 @@ interface CollectedData {
 
 const PageSelector: React.FC = () => {
   const [selectedPages, setSelectedPages] = useState<string[]>([]);
-  const [clicked, setClicked] = useState(false);
+ 
 
   const isAllSelected: boolean = selectedPages.length === pages.length;
 
